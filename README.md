@@ -18,6 +18,6 @@ See the visualization: http://bl.ocks.org/diafygi/3f344c22f8a37a7b2151
 ~~~
 
 ## Usage:
-* Update the keyserver_domains list in keyserver_scan.py with the keyservers form the pool.
+* Update the keyserver_domains list in keyserver_scan.py with the keyservers from the pool.
 * Run run.sh: `./run.sh`
 * Open index.html in your browser.
