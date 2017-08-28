@@ -7,7 +7,7 @@ sed -i "s%http://%%g" "servers.txt"
 echo ""
 wc -l servers.txt
 echo ""
-python keyserver_scan.py > sks-network.json
+python2.7 keyserver_scan.py > sks-network.json
 echo ""
 wc -l servers.txt
 echo ""
