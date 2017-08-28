@@ -1,4 +1,9 @@
 #!/bin/bash
-echo "Be sure to update the keyserver_domains list in keyserver_scan.py with the keyservers form the pool."
+echo "Getting server list..."
+curl https://sks-keyservers.net/status/ | grep -E "<tr><td" | grep "http" | grep -Po '(?<=href=")[^"]*' | grep -v "/pks/lookup?op" | grep -v "info/" | grep -v ".php" | grep -v "https://" | grep -v "11371/" > servers.txt
+sed -i -e 's/:11371//g' servers.txt
+sed -i "s%http://%%g" "servers.txt"
 python keyserver_scan.py > sks-network.json
-echo "Done! Open index.html in your browser!"
+echo "##########################################"
+echo "# Done! Open index.html in your browser! #"
+echo "##########################################"
