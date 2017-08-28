@@ -1,24 +1,28 @@
 # SKS Keyserver Gossip Network Graph
 *SKS/GPG Keyserver Gossip Network Graph forked from https://gist.github.com/diafygi/3f344c22f8a37a7b2151*
 
-Generating an Edge Bundling visualization of the SKS keyserver gossip network.
-
+**Generating an Edge Bundling visualization of the SKS keyserver gossip network.**
 
 Written by Daniel Roesler (https://daylightpirates.org/)
 
 Released under GPLv3.
 
-
 Updated by Timlukas Bloch (https://timlukas.de)
 
 Uses data from https://sks-keyservers.net
+
+## Prerequisites:
+* Internet connection
+* Browser
+* echo, grep, sed
+* curl (tested on 7.47)
+* Python (tested on 2.7)
 
 ## Usage:
 * Run run.sh: `./run.sh`
 * Open index.html in your browser.
 
 **Mouseover any of the nodes in the network to see the incoming links (dependants) in green and the outgoing links (dependencies) in red.**
-
 
 ## Original README:
 ~~~
