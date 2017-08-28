@@ -16,7 +16,7 @@ Uses data from https://sks-keyservers.net
 * Browser
 * echo, grep, sed
 * curl (tested on 7.47)
-* Python (tested on 2.7)
+* Python (2.7 or higher)
 
 ## Usage:
 * Run run.sh: `./run.sh`
