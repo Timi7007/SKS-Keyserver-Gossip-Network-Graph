@@ -3,20 +3,21 @@
 
 Generating an Edge Bundling visualization of the SKS keyserver gossip network.
 
+
 Written by Daniel Roesler (https://daylightpirates.org/)
+
 Released under GPLv3.
 
+
 Updated by Timlukas Bloch (https://timlukas.de)
+
 Uses data from https://sks-keyservers.net
 
 ## Usage:
 * Run run.sh: `./run.sh`
 * Open index.html in your browser.
 
-Mouseover any of the nodes in the network to see the incoming links (dependants) in green and the outgoing links (dependencies) in red.
-
-
-
+**Mouseover any of the nodes in the network to see the incoming links (dependants) in green and the outgoing links (dependencies) in red.**
 
 
 ## Original README:
