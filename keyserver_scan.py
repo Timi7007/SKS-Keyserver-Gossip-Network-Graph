@@ -10,7 +10,7 @@ Written by Daniel Roesler (https://daylightpirates.org/)
 Released under GPLv3.
 Updated by Timlukas Bloch (https://timlukas.de)
 """
-import urllib2, time, sys, re, collections, json
+import urllib2, time, sys, re, collections, json, datetime, tzlocal
 
 server_list_path = 'servers.txt'
 server_list = open(server_list_path,'r')
@@ -69,4 +69,13 @@ for n, peer in enumerate(sorted(list(all_peers))):
         })
 
 print json.dumps(result, indent=4, sort_keys=True)
-        
+
+
+
+timestamp_path = 'timestamp.html'
+timestamp_file = open(timestamp_path,'w')
+
+now = datetime.datetime.now(tzlocal.get_localzone())
+print >> timestamp_file, ('Last Update: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()) + " " + now.strftime('%Z'))
+
+timestamp_file.close()

@@ -17,6 +17,7 @@ Uses data from https://sks-keyservers.net
 * echo, grep, sed
 * curl (tested on 7.47)
 * Python (2.7 or higher)
+* tzlocal (`sudo -H pip install tzlocal`)
 
 ## Usage:
 * Run run.sh: `./run.sh`
