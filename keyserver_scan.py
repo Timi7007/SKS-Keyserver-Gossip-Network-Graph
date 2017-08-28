@@ -3,12 +3,12 @@ This is a quick script to scan the SKS keyserver pool and build
 a Edge Bundling visualization of the gossip network.
 
 How to use:
-1. Update the keyserver_domains list below with the keyservers to scan.
-2. Run: python keyserver_scan.py > sks-network.json
-3. Open index.html in your browser!
+1. Start run.sh
+2. Open index.html in your browser!
 
 Written by Daniel Roesler (https://daylightpirates.org/)
 Released under GPLv3.
+Updated by Timlukas Bloch (https://timlukas.de)
 """
 import urllib2, time, sys, re, collections, json
 
