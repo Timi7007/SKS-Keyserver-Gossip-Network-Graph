@@ -17,12 +17,12 @@ Uses data from https://sks-keyservers.net
 * Internet connection
 * Browser
 * echo, grep, sed
-* curl (tested on 7.47)
+* curl (tested on 7.47 and higher)
 * Python (2.7 or higher)
-* tzlocal (`sudo -H pip install tzlocal`)
+* [tzlocal](https://github.com/regebro/tzlocal) (`sudo -H pip install tzlocal`)
 
 ## Usage:
-* Run run.sh: `./run.sh`
+* Run run.sh: `./run.sh` (this might take some time)
 * Open index.html in your browser.
 
 **Mouseover any of the nodes in the network to see the incoming links (dependants) in green and the outgoing links (dependencies) in red.**
