@@ -3,7 +3,7 @@
 
 **Generating an Edge Bundling visualization of the SKS keyserver gossip network.**
 
-Example: https://timlukas.de/sks/graph/
+**Example: https://timlukas.de/sks/graph/**
 
 Written by Daniel Roesler (https://daylightpirates.org/)
 
@@ -14,8 +14,8 @@ Updated by Timlukas Bloch (https://timlukas.de)
 Uses data from https://sks-keyservers.net
 
 ## Prerequisites:
-* Internet connection
-* Browser
+* Internet connection (Make sure your firewall doesn't block port 11371)
+* Browser (JavaScript enabled)
 * echo, grep, sed
 * curl (tested on 7.47 and higher)
 * Python (2.7 or higher)

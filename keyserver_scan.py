@@ -30,22 +30,31 @@ while i < len(keyserver_domains):
         url = "http://{}:11371/pks/lookup?op=stats".format(domain)
         req = urllib2.urlopen(url)
     except (urllib2.HTTPError, urllib2.URLError) as e:
-        if keyserver_retries[domain] < 10:
-            keyserver_retries[domain] += 1
-            sys.stderr.write("failed, retrying {}/10...\n".format(keyserver_retries[domain]))
-            continue
-        else:
-            sys.stderr.write("failed, skipping...\n")
-            i += 1
-            continue
+        try:
+            url = "http://{}/pks/lookup?op=stats".format(domain)
+            req = urllib2.urlopen(url)
+        except (urllib2.HTTPError, urllib2.URLError) as ee:
+            if keyserver_retries[domain] < 10:
+                keyserver_retries[domain] += 1
+                sys.stderr.write(" failed to connect, retrying {}/10...\n".format(keyserver_retries[domain]))
+                continue
+            else:
+                sys.stderr.write(" failed to connect, skipping...\n")
+                i += 1
+                continue
 
     html = req.read()
-    peers_html = re.search("<table summary=\"Gossip Peers\">(.*?)</table>",
-        html, re.MULTILINE|re.DOTALL).group(1)
+    peers_html = re.search("<table summary=\"Gossip Peers\">(.*?)</table>", html, re.MULTILINE|re.DOTALL)
+    if peers_html:
+        peers_html = peers_html.group(1)
+    else:
+        sys.stderr.write(" failed to find peers, skipping...\n")
+        i += 1
+        continue
     peers = re.findall("<tr><td>([\w\.]+) [\d]+</td></tr>", peers_html)
     for p in peers:
         keyserver_peers.setdefault(domain, []).append(p)
-    sys.stderr.write("found {} peers\n".format(len(peers)))
+    sys.stderr.write(" found {} peers!\n".format(len(peers)))
     i += 1
 
 result = []
